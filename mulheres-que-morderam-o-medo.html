@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mulheres que Morderam o Medo — Lecão</title>
+  <meta name="description" content="Livro de poesia sobre coragem silenciosa. Por Leandro Marcos Pereira (Lecão).">
+  <meta property="og:title" content="Mulheres que Morderam o Medo — Lecão">
+  <meta property="og:description" content="Nem toda coragem faz barulho. Um livro sobre mulheres reais que aprenderam a morder o medo.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --rosa-claro: #fdf6f0;
+      --rosa-medio: #f2c4bb;
+      --rosa-borda: #e0c4b8;
+      --rosa-escuro: #c4786a;
+      --marrom: #7a3b2e;
+      --marrom-escuro: #2a1a0e;
+      --marrom-medio: #5a3e35;
+      --marrom-claro: #8b5e4a;
+      --branco-quente: #fff9f5;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--rosa-claro);
+      color: var(--marrom-escuro);
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem 3rem;
+      text-align: center;
+      background: var(--rosa-claro);
+    }
+
+    .pretitulo {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--marrom-claro);
+      margin-bottom: 1rem;
+    }
+
+    .titulo-hero {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 6vw, 44px);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--marrom-escuro);
+      max-width: 480px;
+      margin-bottom: 0.4rem;
+    }
+
+    .titulo-hero em {
+      font-style: italic;
+      color: var(--marrom);
+    }
+
+    .subtitulo-hero {
+      font-size: 14px;
+      font-style: italic;
+      color: var(--marrom-claro);
+      margin-bottom: 3rem;
+    }
+
+    /* ── LIVRO 3D ── */
+    .book-3d-wrap {
+      perspective: 900px;
+      width: 220px;
+      height: 300px;
+      margin: 0 auto 3rem;
+    }
+
+    .book-3d {
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transform: rotateY(-22deg) rotateX(3deg);
+      position: relative;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: rotateY(-22deg) rotateX(3deg) translateY(0); }
+      50%       { transform: rotateY(-22deg) rotateX(3deg) translateY(-10px); }
+    }
+
+    .face {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      backface-visibility: hidden;
+    }
+
+    .face-front {
+      background: var(--rosa-medio);
+      transform: translateZ(16px);
+      border-radius: 2px 8px 8px 2px;
+      border: 1px solid #e8a898;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 20px;
+      overflow: hidden;
+    }
+
+    .face-spine {
+      width: 32px;
+      height: 100%;
+      background: #d4968a;
+      position: absolute;
+      top: 0;
+      left: -16px;
+      transform: rotateY(-90deg) translateZ(0px);
+      transform-origin: right center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 3px 0 0 3px;
+      overflow: hidden;
+    }
+
+    .spine-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 9px;
+      color: #4a1e14;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+      letter-spacing: 1.5px;
+      text-align: center;
+      padding: 6px 0;
+    }
+
+    .book-cover-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #3d1810;
+      text-align: center;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .book-cover-title em { font-style: italic; }
+
+    .scratch {
+      width: 70px; height: 3px;
+      background: #c4786a;
+      border-radius: 2px;
+      margin: 14px auto;
+      opacity: 0.5;
+      transform: rotate(-8deg);
+    }
+
+    .scratch2 {
+      width: 45px; height: 2px;
+      background: #c4786a;
+      border-radius: 2px;
+      margin: 4px auto;
+      opacity: 0.3;
+      transform: rotate(5deg);
+    }
+
+    .book-cover-autor {
+      font-family: 'Lora', serif;
+      font-size: 11px;
+      color: #6b3428;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: auto;
+    }
+
+    /* ── SETA ── */
+    .arrow-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--marrom);
+      font-family: 'Lora', serif;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      padding: 8px;
+      text-transform: uppercase;
+      animation: bounce 2.5s ease-in-out infinite;
+      transition: opacity 0.2s;
+    }
+
+    .arrow-btn:hover { opacity: 0.7; }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(7px); }
+    }
+
+    .arrow-circle {
+      width: 44px; height: 44px;
+      border: 1.5px solid var(--rosa-escuro);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .arrow-circle svg {
+      width: 20px; height: 20px;
+      stroke: var(--marrom);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── SOBRE ── */
+    .sobre {
+      background: var(--branco-quente);
+      padding: 5rem 2rem;
+      text-align: center;
+      border-top: 0.5px solid #f0d8ce;
+      border-bottom: 0.5px solid #f0d8ce;
+    }
+
+    .frase-destaque {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(18px, 4vw, 24px);
+      font-style: italic;
+      color: var(--marrom);
+      max-width: 520px;
+      margin: 0 auto 2rem;
+      line-height: 1.5;
+    }
+
+    .descricao {
+      font-size: 15px;
+      color: var(--marrom-medio);
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.9;
+    }
+
+    /* ── CHECKOUT ── */
+    .checkout {
+      padding: 5rem 2rem;
+      background: var(--rosa-claro);
+      text-align: center;
+    }
+
+    .checkout-titulo {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(20px, 4vw, 26px);
+      color: var(--marrom-escuro);
+      margin-bottom: 0.5rem;
+    }
+
+    .checkout-sub {
+      font-size: 13px;
+      color: var(--marrom-claro);
+      margin-bottom: 2.5rem;
+    }
+
+    .preco-box {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--branco-quente);
+      border: 0.5px solid var(--rosa-borda);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      width: 100%;
+      max-width: 380px;
+      margin-bottom: 1.5rem;
+    }
+
+    .preco-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--marrom-claro);
+      margin-bottom: 10px;
+    }
+
+    .preco-valor {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--marrom);
+      line-height: 1;
+    }
+
+    .preco-cifrao { font-size: 24px; vertical-align: middle; }
+    .preco-cents  { font-size: 28px; }
+
+    .divisor {
+      width: 100%;
+      height: 0.5px;
+      background: var(--rosa-borda);
+      margin: 1.5rem 0;
+    }
+
+    /* ── CALCULADORA DE FRETE ── */
+    .frete-section { width: 100%; }
+
+    .frete-titulo {
+      font-size: 12px;
+      color: var(--marrom-claro);
+      text-align: left;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .frete-titulo svg {
+      width: 14px; height: 14px;
+      stroke: var(--marrom-claro);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .cep-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .cep-input {
+      flex: 1;
+      border: 0.5px solid var(--rosa-borda);
+      border-radius: 10px;
+      padding: 11px 14px;
+      font-size: 15px;
+      font-family: 'Lora', serif;
+      background: white;
+      color: var(--marrom-escuro);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .cep-input:focus { border-color: var(--marrom); }
+
+    .calc-btn {
+      background: var(--marrom);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 11px 18px;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: 'Lora', serif;
+      white-space: nowrap;
+      transition: background 0.15s;
+    }
+
+    .calc-btn:hover   { background: #5a2a20; }
+    .calc-btn:disabled { background: #d4b8ae; cursor: not-allowed; }
+
+    .link-cep {
+      font-size: 11px;
+      color: var(--marrom-claro);
+      text-decoration: none;
+      text-align: right;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .link-cep:hover { text-decoration: underline; }
+
+    .erro-cep {
+      font-size: 12px;
+      color: #c0392b;
+      margin: 4px 0 8px;
+      text-align: left;
+    }
+
+    .cidade-info {
+      font-size: 12px;
+      color: var(--marrom-claro);
+      margin-bottom: 10px;
+      text-align: left;
+      font-style: italic;
+    }
+
+    .opcoes-frete {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .opcao {
+      border: 0.5px solid var(--rosa-borda);
+      border-radius: 10px;
+      padding: 11px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      background: white;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .opcao:hover  { border-color: var(--marrom-claro); }
+    .opcao.sel    { border-color: var(--marrom); background: #fdf0eb; }
+
+    .opcao input[type="radio"] { accent-color: var(--marrom); flex-shrink: 0; }
+
+    .opcao-info   { flex: 1; text-align: left; }
+    .opcao-nome   { font-size: 14px; font-weight: 500; color: var(--marrom-escuro); }
+    .opcao-prazo  { font-size: 11px; color: var(--marrom-claro); margin-top: 2px; }
+    .opcao-val    { font-size: 15px; font-weight: 500; color: var(--marrom); flex-shrink: 0; }
+
+    .resumo-bloco {
+      margin-top: 14px;
+      border-top: 0.5px solid var(--rosa-borda);
+      padding-top: 12px;
+    }
+
+    .resumo-linha {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--marrom-claro);
+      margin-bottom: 5px;
+    }
+
+    .total-linha {
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--marrom-escuro);
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 0.5px solid var(--rosa-borda);
+    }
+
+    /* ── BOTÃO MERCADO PAGO ── */
+    .btn-mp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: #009ee3;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 12px;
+      padding: 18px 36px;
+      font-size: 16px;
+      font-weight: 500;
+      font-family: 'Lora', serif;
+      cursor: pointer;
+      width: 100%;
+      max-width: 380px;
+      transition: background 0.15s, transform 0.1s;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-mp:hover    { background: #0082bd; transform: translateY(-2px); }
+    .btn-mp:active   { transform: translateY(0); }
+    .btn-mp:disabled { background: #b0c8d8; cursor: not-allowed; transform: none; }
+
+    .mp-badge {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      background: white;
+      color: #009ee3;
+      border-radius: 4px;
+      padding: 2px 7px;
+      flex-shrink: 0;
+    }
+
+    .garantias {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .garantia-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--marrom-claro);
+    }
+
+    .garantia-item svg {
+      width: 16px; height: 16px;
+      stroke: #0F6E56;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    /* ── AUTOR ── */
+    .autor-section {
+      background: var(--branco-quente);
+      border-top: 0.5px solid #f0d8ce;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .autor-nome {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--marrom-escuro);
+      margin-bottom: 6px;
+    }
+
+    .autor-bio {
+      font-size: 14px;
+      color: var(--marrom-medio);
+      max-width: 420px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.8;
+    }
+
+    .redes {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .rede-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--marrom);
+      text-decoration: none;
+      border: 0.5px solid var(--rosa-borda);
+      border-radius: 99px;
+      padding: 7px 16px;
+      font-family: 'Lora', serif;
+      transition: background 0.15s, border-color 0.15s;
+    }
+
+    .rede-link:hover { background: #fdf0eb; border-color: var(--rosa-escuro); }
+
+    .rede-link svg {
+      width: 16px; height: 16px;
+      stroke: var(--marrom);
+      fill: none;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 12px;
+      color: #b0907e;
+      border-top: 0.5px solid #f0d8ce;
+      background: var(--rosa-claro);
+    }
+
+    /* ── RESPONSIVO ── */
+    @media (max-width: 480px) {
+      .book-3d-wrap { width: 180px; height: 250px; }
+      .preco-box    { padding: 2rem 1.5rem; }
+      .garantias    { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="pretitulo">Poesia · Lecão</p>
+    <h1 class="titulo-hero">Mulheres <em>que</em><br>Morderam o Medo</h1>
+    <p class="subtitulo-hero">por Leandro Marcos Pereira</p>
+
+    <div class="book-3d-wrap" aria-hidden="true">
+      <div class="book-3d">
+        <div class="face face-front">
+          <p class="book-cover-title">Mulheres <em>que</em><br>Morderam<br>o Medo</p>
+          <div class="scratch"></div>
+          <div class="scratch2"></div>
+          <p class="book-cover-autor">Lecão</p>
+        </div>
+        <div class="face-spine">
+          <p class="spine-text">Mulheres que Morderam o Medo &middot; Lecão</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="arrow-btn" onclick="document.getElementById('comprar').scrollIntoView({behavior:'smooth'})" aria-label="Ir para compra">
+      <span>quero meu exemplar</span>
+      <div class="arrow-circle">
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+    </button>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="sobre">
+    <p class="frase-destaque">"Nem toda coragem faz barulho."</p>
+    <p class="descricao">
+      Em poemas curtos e textos de respiração profunda, Lecão escreve sobre mulheres que seguem mesmo quando tremem — que criam futuro enquanto caminham, que transformam o medo em movimento.<br><br>
+      Não é um livro sobre heroínas inalcançáveis. É sobre mulheres reais que aprenderam a morder o medo antes que ele as engolisse.
+    </p>
+  </section>
+
+  <!-- CHECKOUT -->
+  <section class="checkout" id="comprar">
+    <p class="checkout-titulo">Garanta seu exemplar</p>
+    <p class="checkout-sub">Livro físico &middot; Entrega em todo o Brasil</p>
+
+    <div class="preco-box">
+      <p class="preco-label">Preço</p>
+      <p class="preco-valor">
+        <span class="preco-cifrao">R$&nbsp;</span>39<span class="preco-cents">,90</span>
+      </p>
+
+      <div class="divisor"></div>
+
+      <!-- CALCULADORA DE FRETE -->
+      <div class="frete-section">
+        <p class="frete-titulo">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Calcule o frete
+        </p>
+        <div class="cep-row">
+          <input class="cep-input" id="cepInput" type="text" placeholder="00000-000" maxlength="9"
+            oninput="formatarCep(this)" onkeydown="if(event.key==='Enter') calcularFrete()">
+          <button class="calc-btn" id="calcBtn" onclick="calcularFrete()">Calcular</button>
+        </div>
+        <a class="link-cep" href="https://buscacepinter.correios.com.br" target="_blank" rel="noopener">
+          Não sei meu CEP
+        </a>
+        <p id="erroEl" class="erro-cep" style="display:none"></p>
+        <p id="cidadeEl" class="cidade-info" style="display:none"></p>
+        <div id="opcoesEl" class="opcoes-frete" style="display:none"></div>
+        <div id="resumoEl" class="resumo-bloco" style="display:none">
+          <div class="resumo-linha"><span>Livro</span><span>R$ 39,90</span></div>
+          <div class="resumo-linha"><span id="freteNome">Frete</span><span id="freteVal">—</span></div>
+          <div class="total-linha"><span>Total</span><strong id="totalVal">—</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <button class="btn-mp" id="btnMp" onclick="irParaMp()" disabled>
+      <span class="mp-badge">MP</span>
+      Comprar com Mercado Pago
+    </button>
+
+    <div class="garantias">
+      <div class="garantia-item">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Compra segura
+      </div>
+      <div class="garantia-item">
+        <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        Pix &middot; Cartão &middot; Boleto
+      </div>
+      <div class="garantia-item">
+        <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        Entrega nacional
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTOR -->
+  <section class="autor-section">
+    <p class="pretitulo" style="margin-bottom:.75rem">O autor</p>
+    <p class="autor-nome">Lecão</p>
+    <p class="autor-bio">
+      Leandro Marcos Pereira, o Lecão, é escritor e poeta. Suas palavras falam de coragem silenciosa, afeto e recomeços. Acompanhe seu trabalho nas redes sociais.
+    </p>
+    <div class="redes">
+      <a class="rede-link" href="https://instagram.com/escritorlecao" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        escritorlecao
+      </a>
+      <a class="rede-link" href="https://tiktok.com/@escritorlecao" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
+        escritorlecao
+      </a>
+      <a class="rede-link" href="https://facebook.com/escritorlecao" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        escritorlecao
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Leandro Marcos Pereira &middot; Todos os direitos reservados
+  </footer>
+
+  <script>
+    /* ─── DADOS ─── */
+    const PRECO_LIVRO = 39.90;
+
+    /* 
+      MERCADO PAGO: substitua a URL abaixo pelo link de pagamento gerado
+      no painel do Mercado Pago ou via API (Preference ID).
+      Painel: https://www.mercadopago.com.br/tools/create
+    */
+    const MP_URL = 'https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=SEU_PREFERENCE_ID_AQUI';
+
+    const REGIOES = {
+      sudeste:     { label:'São Paulo / Rio de Janeiro / Minas Gerais / Espírito Santo',
+                     pac:{dias:'5–7',val:14.90}, expresso:{dias:'3–4',val:19.90}, sedex:{dias:'1–2',val:28.90} },
+      sul:         { label:'Paraná / Santa Catarina / Rio Grande do Sul',
+                     pac:{dias:'6–8',val:16.90}, expresso:{dias:'4–5',val:22.90}, sedex:{dias:'2–3',val:31.90} },
+      nordeste:    { label:'Bahia / Pernambuco / Ceará e demais estados nordestinos',
+                     pac:{dias:'8–12',val:19.90}, expresso:{dias:'6–8',val:26.90}, sedex:{dias:'3–5',val:36.90} },
+      norte:       { label:'Amazonas / Pará e demais estados do Norte',
+                     pac:{dias:'10–15',val:23.90}, expresso:{dias:'7–10',val:31.90}, sedex:{dias:'4–6',val:42.90} },
+      centroOeste: { label:'Brasília / Goiás / Mato Grosso / Mato Grosso do Sul',
+                     pac:{dias:'7–10',val:17.90}, expresso:{dias:'5–7',val:24.90}, sedex:{dias:'2–4',val:33.90} },
+    };
+
+    /* Mapeamento de prefixo de CEP → região */
+    const CEP_MAP = {};
+    [['01','02','03','04','05','06','07','08','09',
+      '10','11','12','13','14','15','16','17','18','19',
+      '20','21','22','23','24','25','26','27','28','29',
+      '30','31','32','33','34','35','36','37','38','39'], 'sudeste'],
+    [['40','41','42','43','44','45','46','47','48','49',
+      '50','51','52','53','54','55','56','57','58','59',
+      '60','61','62','63','64','65','66','67'], 'nordeste'],
+    [['68','69'], 'norte'],
+    [['70','71','72','73','74','75','76','77','78','79'], 'centroOeste'],
+    [['80','81','82','83','84','85','86','87','88','89',
+      '90','91','92','93','94','95','96','97','98','99'], 'sul'],
+    ].forEach(([prefixos, regiao]) => prefixos.forEach(p => CEP_MAP[p] = regiao));
+
+    /* ─── ESTADO ─── */
+    let freteEscolhido = null;
+
+    /* ─── FUNÇÕES ─── */
+    function formatarCep(el) {
+      let v = el.value.replace(/\D/g, '');
+      if (v.length > 5) v = v.slice(0, 5) + '-' + v.slice(5, 8);
+      el.value = v;
+    }
+
+    function fmt(v) {
+      return 'R$ ' + v.toFixed(2).replace('.', ',');
+    }
+
+    function calcularFrete() {
+      const raw = document.getElementById('cepInput').value.replace(/\D/g, '');
+      const erroEl   = document.getElementById('erroEl');
+      const cidadeEl = document.getElementById('cidadeEl');
+      const opcoesEl = document.getElementById('opcoesEl');
+      const resumoEl = document.getElementById('resumoEl');
+      const btn      = document.getElementById('calcBtn');
+
+      erroEl.style.display   = 'none';
+      cidadeEl.style.display = 'none';
+      opcoesEl.style.display = 'none';
+      resumoEl.style.display = 'none';
+      freteEscolhido = null;
+      document.getElementById('btnMp').disabled = true;
+
+      if (raw.length !== 8) {
+        erroEl.textContent = 'CEP inválido. Digite os 8 números.';
+        erroEl.style.display = 'block';
+        return;
+      }
+
+      btn.disabled    = true;
+      btn.textContent = 'Calculando...';
+
+      /* Simula latência de API — substitua este setTimeout
+         pela chamada real à API do Melhor Envio */
+      setTimeout(() => {
+        btn.disabled    = false;
+        btn.textContent = 'Calcular';
+
+        const pref   = raw.slice(0, 2);
+        const regKey = CEP_MAP[pref];
+
+        if (!regKey) {
+          erroEl.textContent = 'CEP não encontrado. Verifique e tente novamente.';
+          erroEl.style.display = 'block';
+          return;
+        }
+
+        const reg = REGIOES[regKey];
+        cidadeEl.textContent  = 'Entregando para: ' + reg.label;
+        cidadeEl.style.display = 'block';
+
+        const opcoes = [
+          { key:'pac',      nome:'PAC',      ...reg.pac },
+          { key:'expresso', nome:'Expresso', ...reg.expresso },
+          { key:'sedex',    nome:'SEDEX',    ...reg.sedex },
+        ];
+
+        opcoesEl.innerHTML = opcoes.map(op => `
+          <div class="opcao" id="op_${op.key}" onclick="selecionarFrete('${op.key}','${op.nome}',${op.val})">
+            <input type="radio" name="frete" id="r_${op.key}" ${op.key === 'pac' ? 'checked' : ''}>
+            <div class="opcao-info">
+              <p class="opcao-nome">${op.nome}</p>
+              <p class="opcao-prazo">${op.dias} dias úteis</p>
+            </div>
+            <span class="opcao-val">${fmt(op.val)}</span>
+          </div>
+        `).join('');
+
+        opcoesEl.style.display = 'flex';
+        selecionarFrete('pac', 'PAC', reg.pac.val);
+      }, 700);
+    }
+
+    function selecionarFrete(key, nome, val) {
+      document.querySelectorAll('.opcao').forEach(el => el.classList.remove('sel'));
+      const el = document.getElementById('op_' + key);
+      if (el) el.classList.add('sel');
+      const r = document.getElementById('r_' + key);
+      if (r) r.checked = true;
+
+      freteEscolhido = { key, nome, val };
+
+      const total = PRECO_LIVRO + val;
+      document.getElementById('freteNome').textContent = 'Frete (' + nome + ')';
+      document.getElementById('freteVal').textContent  = fmt(val);
+      document.getElementById('totalVal').textContent  = fmt(total);
+      document.getElementById('resumoEl').style.display = 'block';
+      document.getElementById('btnMp').disabled = false;
+    }
+
+    function irParaMp() {
+      window.open(MP_URL, '_blank');
+    }
+  </script>
+
+</body>
+</html>
