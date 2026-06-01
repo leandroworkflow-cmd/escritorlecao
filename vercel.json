@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "routes": [
+    { "src": "/api/frete", "dest": "/api/frete.js" },
+    { "src": "/api/checkout", "dest": "/api/checkout.js" }
+  ]
+}
